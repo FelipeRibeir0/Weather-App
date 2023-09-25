@@ -1,67 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="app.js" defer></script>
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="weather-input">
-            <h3>Insira o nome de uma Cidade</h3>
-            <input class="city-input" type="text" pattern="[A-Za-z]+" placeholder="New York, São Paulo, Tokyo">
-            <button class="search-button">Pesquisar</button>
-        </div>
-        <div class="weather-data">
-            <div class="current-weather">
-                <div class="details">
-                    <h2>___ ( __________ )
-                    </h2>
-                    <h4>Temperatura: ____</h4>
-                    <h4>Vento: ________</h4>
-                    <h4>Umidade: ___</h4>
-                    <div class="min-max">
-                        <span>Min:</span>
-                        <span>Max:</span>
-                    </div>
-                </div>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/weather.js" defer></script>
+    <script src="js/theme.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="weather-input">
+        <input
+        autocomplete="off"
+          id="city-input"
+          type="text"
+          required
+          pattern="[A-Za-z]+"
+          placeholder="New York, São Paulo, Tokyo"
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <i class="fa-solid fa-moon" id="themeChanger"></i>
+    </header>
+    <main class="container">
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <span></span>
+            <h4><i class="fa-solid fa-temperature-quarter"></i> </h4>
+            <h4><i class="fa-solid fa-wind"></i> </h4>
+            <h4><i class="fa-solid fa-water"></i> </h4>
+            <h4><i class="fa-solid fa-cloud"></i> </h4>
+            <div class="max-min">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span></span>
+              <i class="fa-solid fa-arrow-down"></i>
+              <span></span>
             </div>
-            <div class="days-forecast">
-                <ul class="weather-cards">
-                    <li class="card">
-                        <h2>( __________ )</h2>
-                        <h4>Temperatura: ____</h4>
-                        <h4>Vento: ________</h4>
-                        <h4>Umidade: ___</h4>
-                    </li>
-                    <li class="card">
-                        <h2>( __________ )</h2>
-                        <h4>Temperatura: ____</h4>
-                        <h4>Vento: ________</h4>
-                        <h4>Umidade: ___</h4>
-                    </li>
-                    <li class="card">
-                        <h2>( __________ )</h2>
-                        <h4>Temperatura: ____</h4>
-                        <h4>Vento: ________</h4>
-                        <h4>Umidade: ___</h4>
-                    </li>
-                    <li class="card">
-                        <h2>( __________ )</h2>
-                        <h4>Temperatura: ____</h4>
-                        <h4>Vento: ________</h4>
-                        <h4>Umidade: ___</h4>
-                    </li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </div>
-</body>
-
+        <div class="days-forecast">
+          <ul class="weather-cards">
+            <li class="card">
+              <h2>(  )</h2>
+              <h4><i class="fa-solid fa-temperature-quarter"></i> </h4>
+              <h4><i class="fa-solid fa-wind"></i> </h4>
+              <h4><i class="fa-solid fa-droplet"></i> </h4>
+            </li>
+            <li class="card">
+              <h2>(  )</h2>
+              <h4><i class="fa-solid fa-temperature-quarter"></i> </h4>
+              <h4><i class="fa-solid fa-wind"></i> </h4>
+              <h4><i class="fa-solid fa-droplet"></i> </h4>
+            </li>
+            <li class="card">
+              <h2>(  )</h2>
+              <h4><i class="fa-solid fa-temperature-quarter"></i> </h4>
+              <h4><i class="fa-solid fa-wind"></i> </h4>
+              <h4><i class="fa-solid fa-droplet"></i> </h4>
+            </li>
+            <li class="card">
+              <h2>(  )</h2>
+              <h4><i class="fa-solid fa-temperature-quarter"></i> </h4>
+              <h4><i class="fa-solid fa-wind"></i> </h4>
+              <h4><i class="fa-solid fa-droplet"></i> </h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
