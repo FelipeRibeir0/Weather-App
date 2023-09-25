@@ -29,7 +29,7 @@ getWeatherDetails();
 function getWeatherDetails() {
   const cityName = cityInput.value ? cityInput.value.trim() : localCity;
   localStorage.setItem("cityName", cityName);
-  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=${API_KEY}&lang=pt_br`;
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=${API_KEY}`;
   cityInput.value = "";
   fetch(forecastURL)
     .then((res) => res.json())
