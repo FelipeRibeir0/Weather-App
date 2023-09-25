@@ -137,9 +137,9 @@ header {
 }
 
 h3 {
-    color: white;
-    margin-bottom: 12px;
-  }
+  color: white;
+  margin-bottom: 12px;
+}
 
 h4 {
   margin-bottom: 12px;
@@ -209,4 +209,30 @@ img[src="https://openweathermap.org/img/wn/10d@2x.png"],
 img[src="https://openweathermap.org/img/wn/02d@2x.png"]
 {
   filter: hue-rotate(49deg) saturate(10);
+}
+
+/* Tablets */
+@media (max-width: 596px) {
+  .weather-input {
+    width: 450px;
+  }
+  #city-input {
+    width: 90%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 432px) {
+  .weather-cards .card {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 406px) {
+  .current-weather {
+    padding: 10px;
+  }
+  .icon {
+    width: 80px;
+  }
 }
