@@ -35,12 +35,25 @@ function getWeatherDetails() {
     .then((res) => res.json())
     .then((data) => {
       const uniqueForecast = [];
-      const fourDays = data.list.filter((forecast) => {
-        const forecastDate = new Date(forecast.dt_txt).getDate();
-        if (!uniqueForecast.includes(forecastDate)) {
-          return uniqueForecast.push(forecastDate);
-        }
+      const forecastByDay = {};
+
+      data.list.forEach((item) => {
+        const date = item.dt_txt.split(" ")[0];
+        if (!forecastByDay[date]) forecastByDay[date] = [];
+        forecastByDay[date].push(item);
       });
+      
+      const fourDays = Object.entries(forecastByDay)
+        .slice(0, 5)
+        .map(([date, items]) => {
+          const temp_max = Math.max(...items.map((i) => i.main.temp_max));
+          const temp_min = Math.min(...items.map((i) => i.main.temp_min));
+          const base = items[0];
+          base.main.temp_max = temp_max;
+          base.main.temp_min = temp_min;
+          base.dt_txt = date;
+          return base;
+        });
       const lat = data.city.coord.lat;
       const lon = data.city.coord.lon;
       const country = data.city.country;
